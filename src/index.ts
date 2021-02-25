@@ -1,8 +1,8 @@
 import { Notifications } from './notifications';
 
 class Service {
-  private send(data) {
-    console.log('Hey', data);
+  private send(notification: object) {
+    console.log('Notification Boyy', notification);
   }
 }
 
