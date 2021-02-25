@@ -1,0 +1,17 @@
+```
+import { Service, Notifications } from './dist';
+
+const NotificationService = new Service();
+
+const send = async () => {
+  try {
+    const notification = Notifications.payments.newPayment;
+
+    await NotificationService.send(notification);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+send();
+```
