@@ -1,13 +1,11 @@
 ```
-import { Service, Notifications } from './dist';
+import { Service } from './dist';
 
 const NotificationService = new Service();
 
 const send = async () => {
   try {
-    const notification = Notifications.payments.newPayment;
-
-    await NotificationService.send(notification);
+    NotificationService.newReward(10, 'Mec');
   } catch (err) {
     console.error(err);
   }
