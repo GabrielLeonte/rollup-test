@@ -1,15 +1,17 @@
-import { Notifications } from './notifications';
+import { newReward, newRewardParams } from './notifications';
 
 class Service {
-  public send(notification: object) {
-    console.log('Notification Boyy', notification);
+  private send(body, params) {
+    console.log(body(params));
   }
 
-  public getNotifications() {
-    return Object.keys(Notifications).map((category) => {
-      return { [category]: Object.keys(Notifications[category]) };
-    });
+  public newReward(amount: number, merchant: string, paramsOnly: boolean = false) {
+    if (paramsOnly) {
+      return newRewardParams;
+    }
+
+    return this.send(newReward, { amount, merchant });
   }
 }
 
-export { Service, Notifications };
+export { Service };

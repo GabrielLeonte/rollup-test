@@ -1,7 +1,1 @@
-import newReward from './newReward';
-
-const rewards = {
-  newReward,
-};
-
-export { rewards };
+export * from './newReward';
